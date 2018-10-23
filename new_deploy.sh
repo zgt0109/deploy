@@ -1,7 +1,7 @@
 #!/bin/bash
 
-# 解决 Ubuntu 16.04 上不能直接用 root 用户登录
-# eg  medusa_client_api_production
+# 解决 Ubuntu 16.04 上mysql5.7不能直接用 root 用户登录
+# eg  medusa_client_production
 read -p "Production Database Name? " database_name
 mysql -u root -e "create database if not exists $database_name default charset utf8;"
 mysql -u root -e "update mysql.user set plugin='mysql_native_password' WHERE User='root';"
