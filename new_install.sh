@@ -5,7 +5,7 @@ export LC_ALL="en_US.UTF-8"
 export DEBIAN_FRONTEND=noninteractive
 
 apt-get update && apt-get install -yq  --no-install-recommends \
-        build-essential language-pack-zh-hans git-core nginx
+        build-essential language-pack-zh-hans git-core tig nginx
 
 # nginx
 sed  -i 's/#\s\+\(server_names_hash_bucket_size\)/\1/' /etc/nginx/nginx.conf
@@ -23,6 +23,9 @@ apt-get update && apt-get install yarn
 yarn config set registry 'https://registry.npm.taobao.org'
 # node-sass 解析器
 yarn config set sass_binary_site "http://cdn.npm.taobao.org/dist/node-sass"
+# 安装umi框架
+yarn global add umi serve now
+yarn add umi-plugin-react
 
 # install ruby
 # https://www.brightbox.com/docs/ruby/ubuntu/
