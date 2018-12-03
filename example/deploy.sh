@@ -5,7 +5,7 @@
 read -p "Production Database Name? " database_name
 mysql -u root -e "create database if not exists $database_name default charset utf8;"
 mysql -u root -e "update mysql.user set plugin='mysql_native_password' WHERE User='root';"
-mysql -u root -e "update mysql.user set authentication_string=password('123456') WHERE User='root';"
+mysql -u root -e "update mysql.user set authentication_string=password('thrive') WHERE User='root';"
 service mysql restart
 
 
@@ -29,6 +29,7 @@ echo ${rsa_pub} >> ~/.ssh/authorized_keys
 
 sed  -i "1i # Rails Applicaton Configure\n" ~/.bashrc
 sed  -i "1a export RAILS_ENV=production" ~/.bashrc
+sed  -i "1a export RAILS_MASTER_KEY=" ~/.bashrc
 EOF
 fi
 # app
