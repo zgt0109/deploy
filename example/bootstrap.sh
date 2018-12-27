@@ -5,7 +5,7 @@ export LC_ALL="en_US.UTF-8"
 export DEBIAN_FRONTEND=noninteractive
 
 apt-get update && apt-get install -yq  --no-install-recommends \
-        build-essential language-pack-zh-hans git-core tig nginx
+        build-essential language-pack-zh-hans git-core tig nginx libcurl3
 
 # nginx
 sed  -i 's/#\s\+\(server_names_hash_bucket_size\)/\1/' /etc/nginx/nginx.conf
@@ -72,7 +72,7 @@ echo ${rsa_pub} >> ~/.ssh/authorized_keys
 
 sed  -i "1i # Rails Applicaton Configure\n" ~/.bashrc
 sed  -i "1a export RAILS_ENV=production" ~/.bashrc
-sed  -i "1a export RAILS_MASTER_KEY=" ~/.bashrc
+sed  -i "2a export RAILS_MASTER_KEY=" ~/.bashrc
 EOF
 fi
 # app
