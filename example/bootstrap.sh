@@ -5,7 +5,7 @@ export LC_ALL="en_US.UTF-8"
 export DEBIAN_FRONTEND=noninteractive
 
 apt-get update && apt-get install -yq  --no-install-recommends \
-        build-essential language-pack-zh-hans git-core tig nginx libcurl3
+        build-essential language-pack-zh-hans git-core tig nginx libcurl4-openssl-dev libcurl3
 
 # nginx
 sed  -i 's/#\s\+\(server_names_hash_bucket_size\)/\1/' /etc/nginx/nginx.conf
