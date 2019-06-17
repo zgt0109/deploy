@@ -37,7 +37,7 @@ gem sources --add $GEM_SOURCES_CHINA --remove $GEM_SOURCES_ORIGIN -v
 echo 'gem: --no-document' | tee -a ~/.gemrc
 
 # bundler
-gem install bundler -v 1.17.1
+gem install bundler
 bundle config mirror.${GEM_SOURCES_ORIGIN%/} ${GEM_SOURCES_CHINA%/}
 
 # install mysql and redis
