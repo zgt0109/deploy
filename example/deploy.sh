@@ -8,7 +8,6 @@ mysql -u root -e "update mysql.user set plugin='mysql_native_password' WHERE Use
 mysql -u root -e "update mysql.user set authentication_string=password('thrive') WHERE User='root';"
 service mysql restart
 
-
 # 创建后端部署用户和APP名称
 read -p "Deploy User Name? " user_name
 read -p "Application Name? " app_name
@@ -29,7 +28,7 @@ echo ${rsa_pub} >> ~/.ssh/authorized_keys
 
 sed  -i "1i # Rails Applicaton Configure\n" ~/.bashrc
 sed  -i "1a export RAILS_ENV=production" ~/.bashrc
-sed  -i "1a export RAILS_MASTER_KEY=" ~/.bashrc
+sed  -i "2a export RAILS_MASTER_KEY=" ~/.bashrc
 EOF
 fi
 # app
