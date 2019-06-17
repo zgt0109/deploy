@@ -30,6 +30,10 @@ apt-get install -yq software-properties-common
 apt-add-repository ppa:brightbox/ruby-ng
 
 apt-get update && apt-get install -yq  --no-install-recommends ruby2.5 ruby2.5-dev
+# 设置项目所需ruby的正确版本
+apt-get install ruby-switch
+ruby-switch --set ruby2.5
+
 # Gem
 GEM_SOURCES_CHINA=https://gems.ruby-china.com/
 GEM_SOURCES_ORIGIN=https://rubygems.org/
