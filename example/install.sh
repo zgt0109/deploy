@@ -34,6 +34,8 @@ echo 'gem: --no-document' | tee -a ~/.gemrc
 gem install bundler
 bundle config mirror.${GEM_SOURCES_ORIGIN%/} ${GEM_SOURCES_CHINA%/}
 
+# 安装rails
+# gem install rails -v 5.2.4.3
 # install mysql and redis
 apt-get install -yq mysql-server mysql-client libmysqlclient-dev
 apt-get install -yq redis-server redis-tools
